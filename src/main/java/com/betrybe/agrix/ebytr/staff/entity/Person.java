@@ -32,6 +32,9 @@ public class Person {
   public Person() {
   }
 
+  /**
+   * Método construtor.
+   */
   public Person(Long id, String username, String password, Role role) {
     this.id = id;
     this.username = username;

@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.betrybe.agrix.ebytr.staff.dto.PersonDto;
 
 
+/**
+ * Classe para controller person.
+ */
 @RestController
 @RequestMapping("persons")
 public class PersonController {
@@ -21,10 +23,13 @@ public class PersonController {
 
 
   @Autowired
-  public PersonController (PersonService service) {
+  public PersonController(PersonService service) {
     this.service = service;
   }
 
+  /**
+   * Método para cadastrar uma pessoa.
+   */
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   public PersonDto createPerson(@RequestBody PersonCreationDto personCreationDto) {
