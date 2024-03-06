@@ -27,4 +27,10 @@ public class GeneralControllerAdvice {
   public ResponseEntity<String> fertilizerNotFound(FertilizerNotFoundException e) {
     return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fertilizante não encontrado!");
   }
+
+  @ExceptionHandler
+  public ResponseEntity<String> serverErrorException(RuntimeException exception) {
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+        .body(exception.getMessage());
+  }
 }
