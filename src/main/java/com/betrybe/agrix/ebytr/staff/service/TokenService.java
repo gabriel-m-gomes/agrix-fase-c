@@ -8,16 +8,26 @@ import java.time.temporal.ChronoUnit;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+/**
+ * Token service.
+ */
 @Service
 public class TokenService {
 
   private final Algorithm algorithm;
 
+
+  /**
+   * Construtor.
+   */
   public TokenService() {
     String secret = "secret";
     this.algorithm = Algorithm.HMAC256(secret);
   }
 
+  /**
+   * valida o token.
+   */
   public String validateToken(String token) {
     return JWT.require(algorithm)
         .withIssuer("agrixdb")
@@ -26,6 +36,9 @@ public class TokenService {
         .getSubject();
   }
 
+  /**
+   * Gera um token.
+   */
   public String generateToken(String username) {
     return JWT.create()
         .withSubject(username)

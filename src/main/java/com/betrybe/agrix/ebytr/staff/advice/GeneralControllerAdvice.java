@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  */
 @ControllerAdvice
 public class GeneralControllerAdvice {
+
   @ExceptionHandler
   public ResponseEntity<String> handleNotFoundException(FarmNotFoundException e) {
     return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fazenda não encontrada!");

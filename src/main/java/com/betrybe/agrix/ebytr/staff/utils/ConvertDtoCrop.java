@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
  * Classe statica para converter crop em CropDto.
  */
 public final class ConvertDtoCrop {
+
   public static CropDto convertCrop(Crop crop) {
     return new CropDto(crop.getId(), crop.getName(), crop.getPlantedArea(),
         crop.getPlantedDate(), crop.getHarvestDate(), crop.getFarm().getId());

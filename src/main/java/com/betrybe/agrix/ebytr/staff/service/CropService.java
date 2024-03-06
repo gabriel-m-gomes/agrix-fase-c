@@ -61,8 +61,8 @@ public class CropService {
   }
 
   /**
-   * Metodo que deve retornar uma lista com as plantações nas
-   * quais o campo harvestDate esteja entre as data de início e de fim.
+   * Metodo que deve retornar uma lista com as plantações nas quais o campo harvestDate esteja entre
+   * as data de início e de fim.
    */
 
   public List<Crop> findBtween(LocalDate start, LocalDate end) {

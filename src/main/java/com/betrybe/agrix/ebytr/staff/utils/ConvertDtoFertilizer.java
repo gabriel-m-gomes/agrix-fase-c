@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
  * Classe statica para converter fertilizer em fertilizerDto.
  */
 public final class ConvertDtoFertilizer {
+
   public static FertilizerDto convertFertilizer(Fertilizer fertilizer) {
     return new FertilizerDto(fertilizer.getId(), fertilizer.getName(), fertilizer.getBrand(),
         fertilizer.getComposition());
