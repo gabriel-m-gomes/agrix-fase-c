@@ -41,6 +41,7 @@ public class TokenService {
    */
   public String generateToken(String username) {
     return JWT.create()
+        .withIssuer("agrixdb")
         .withSubject(username)
         .withExpiresAt(generateExpiration())
         .sign(algorithm);
