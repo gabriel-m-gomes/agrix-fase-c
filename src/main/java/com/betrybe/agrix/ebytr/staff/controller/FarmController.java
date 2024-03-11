@@ -9,6 +9,7 @@ import com.betrybe.agrix.ebytr.staff.utils.ConvertDtoCrop;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +37,7 @@ public class FarmController {
   }
 
   @GetMapping
+  @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER') or hasRole('ROLE_USER')")
   @ResponseStatus(HttpStatus.OK)
   public List<Farm> getAllFarms() {
     return this.farmService.getAllFarms();
